@@ -33,7 +33,7 @@ public class RentalService implements IRentalService {
             return Optional.empty();
         } finally {
             if (success)
-                System.out.println(price);
+                System.out.println(Integer.valueOf((int) price));
             else
                 System.out.println(-1);
         }
