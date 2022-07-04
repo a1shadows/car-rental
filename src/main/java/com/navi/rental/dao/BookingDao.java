@@ -14,7 +14,7 @@ public class BookingDao implements IBookingDao {
     private Map<String, Booking> bookingById;
 
     @PostConstruct
-    private void init() {
+    public void init() {
         bookingById = new HashMap<>();
     }
 

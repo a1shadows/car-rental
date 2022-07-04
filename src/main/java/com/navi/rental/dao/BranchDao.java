@@ -23,7 +23,7 @@ public class BranchDao implements IBranchDao {
     private Map<String, Branch> branchesById;
 
     @PostConstruct
-    private void init() {
+    public void init() {
         vehiclesByTypeByBranch = new HashMap<>();
         vehiclesBySlots = new HashMap<>();
         IntStream.range(1, 24).forEach(i -> vehiclesBySlots.put(i, new HashSet<>()));

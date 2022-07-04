@@ -1,9 +1,11 @@
 package com.navi.rental.model;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @AllArgsConstructor
+@EqualsAndHashCode
 @Getter
 public class Booking {
 

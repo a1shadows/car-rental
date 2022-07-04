@@ -90,13 +90,9 @@ public class BranchService implements IBranchService {
         return false;
     }
 
-    @Override
-    public Double calculateSurgePrice(Branch branch, Double regularPrice, Integer startTime, Integer endTime) {
-        return IBranchService.super.calculateSurgePrice(branch, regularPrice, startTime, endTime);
-    }
 
     private boolean isBranchOverloaded(String branchName, Integer startTime, Integer endTime) {
         return branchDao.getAvailableVehiclesByBranchOrderedByPrice(branchName, startTime, endTime).stream().count() /
-                branchDao.getAllVehiclesByBranchOrderedByPrice(branchName, startTime, endTime).stream().count() > 0.8;
+                branchDao.getAllVehiclesByBranchOrderedByPrice(branchName, startTime, endTime).stream().count() <= 0.2;
     }
 }
