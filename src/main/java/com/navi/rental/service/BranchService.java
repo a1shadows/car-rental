@@ -92,7 +92,7 @@ public class BranchService implements IBranchService {
 
 
     private boolean isBranchOverloaded(String branchName, Integer startTime, Integer endTime) {
-        return branchDao.getAvailableVehiclesByBranchOrderedByPrice(branchName, startTime, endTime).stream().count() /
-                branchDao.getAllVehiclesByBranchOrderedByPrice(branchName, startTime, endTime).stream().count() <= 0.2;
+        return ((double) branchDao.getAvailableVehiclesByBranchOrderedByPrice(branchName, startTime, endTime).stream().count()) /
+                ((double) branchDao.getAllVehiclesByBranchOrderedByPrice(branchName, startTime, endTime).stream().count()) <= 0.2;
     }
 }
